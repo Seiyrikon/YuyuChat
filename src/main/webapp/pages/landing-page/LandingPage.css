@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+/* styles.css */
+.container {
+	border: 1px solid red;
+	margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+	border: 1px solid red;
+    color: #010101;
+}
+
+/* Add more styles as needed */

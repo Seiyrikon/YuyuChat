@@ -1,0 +1,27 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+
+<struts-config>
+    <!-- Optional elements can be added here as needed -->
+
+    <form-beans>
+        <!-- Define your form beans here if needed -->
+    </form-beans>
+
+    <global-exceptions>
+        <!-- Define global exceptions here if needed -->
+    </global-exceptions>
+
+    <global-forwards>
+        <!-- Define global forwards here if needed -->
+    </global-forwards>
+
+    <action-mappings>
+        <!-- Define your action mappings here -->
+        <action path="/~" type="org.yuyuchat.controller.LandingPage" name="landingPage" scope="request">
+            <forward name="landing-page" path="/pages/landing-page/LandingPage.jsp"/>
+        </action>
+    </action-mappings>
+
+    <!-- Other optional elements can be added here as needed -->
+
+</struts-config>

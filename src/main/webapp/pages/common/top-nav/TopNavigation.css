@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.logo-container {
+	flex: 1;
+	padding: 0, 20px, 0, 20px;
+	margin-left: 20px;
+}
+
+.top-nav {
+    display: flex;
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* Text color */
+    padding: 10px;
+    justify-content: flex-center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a subtle elevation */
+    height: 50px;
+}
+
+.login {
+	margin-right: 50px;
+}
+
+.link-container{
+    flex-basis: 10%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.top-nav a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s; /* Change color smoothly on hover */
+}
+
+.top-nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; /* Underline color */
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+
+.top-nav a:hover::before {
+    width: 100%;
+    left: 0;
+}

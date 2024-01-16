@@ -1,0 +1,32 @@
+DROP DATABASE IF EXISTS yuyuchat_db;
+
+CREATE DATABASE yuyuchat;
+
+USE yuyuchat;
+
+CREATE USER 'yuyuchat'@'localhost' IDENTIFIED BY 'tsukiden+';
+GRANT ALL PRIVILEGES ON yuyuchat.* TO 'root'@'localhost';
+
+FLUSH PRIVILEGES;
+
+DROP TABLE IF EXISTS tbl_users;
+CREATE TABLE tbl_users (
+	user_id INT(9) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    del_flag INT(1) NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS tbl_personal_info;
+CREATE TABLE tbl_personal_info (
+	pi_id INT(9) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id INT(9) UNSIGNED NOT NULL,
+    first_name VARCHAR(20) NOT NULL,
+    middle_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(20) NOT NULL,
+    del_flag INT(1) NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT NULL
+);
