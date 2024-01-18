@@ -6,15 +6,15 @@ function showMessage() {
 	alert("wow");
 }
 
-function onSignUp() {
+function loadContent(url) {
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
             if (this.status == 200) {
                 // Handle the response here
-                // You can use responseText to access the content returned by the server
-                document.body.innerHTML = this.responseText;
+                // Use a specific container to load the content
+                document.getElementById('content-container').innerHTML = this.responseText;
             } else {
                 // Handle error or other status codes
                 console.error("Error: " + this.status);
@@ -22,87 +22,27 @@ function onSignUp() {
         }
     };
 
-    xhttp.open("GET", "pages/signup-page/SignupPage.jsp", true);
+    xhttp.open("GET", url, true);
     xhttp.send();
+}
+
+function onSignUp() {
+    loadContent("pages/signup-page/SignupPage.jsp");
 }
 
 function onLogin() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                // Handle the response here
-                // You can use responseText to access the content returned by the server
-                document.body.innerHTML = this.responseText;
-            } else {
-                // Handle error or other status codes
-                console.error("Error: " + this.status);
-            }
-        }
-    };
-
-    xhttp.open("GET", "pages/login-page/LoginPage.jsp", true);
-    xhttp.send();
+	loadContent("pages/login-page/LoginPage.jsp");
 }
 
 function onAboutUs() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                // Handle the response here
-                // You can use responseText to access the content returned by the server
-                document.body.innerHTML = this.responseText;
-            } else {
-                // Handle error or other status codes
-                console.error("Error: " + this.status);
-            }
-        }
-    };
-
-    xhttp.open("GET", "pages/aboutus-page/AboutusPage.jsp", true);
-    xhttp.send();
+	loadContent("pages/aboutus-page/AboutusPage.jsp");
 }
 
 function onFeatures() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                // Handle the response here
-                // You can use responseText to access the content returned by the server
-                document.body.innerHTML = this.responseText;
-            } else {
-                // Handle error or other status codes
-                console.error("Error: " + this.status);
-            }
-        }
-    };
-
-    xhttp.open("GET", "pages/features-page/FeaturesPage.jsp", true);
-    xhttp.send();
+	loadContent("pages/features-page/FeaturesPage.jsp");
 }
 
 
 function onHome() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                // Handle the response here
-                // You can use responseText to access the content returned by the server
-                document.body.innerHTML = this.responseText;
-            } else {
-                // Handle error or other status codes
-                console.error("Error: " + this.status);
-            }
-        }
-    };
-
-    xhttp.open("GET", "pages/landing-page/LandingPage.jsp", true);
-    xhttp.send();
+	loadContent("pages/landing-page/LandingPage.jsp");
 }

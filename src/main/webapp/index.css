@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+}

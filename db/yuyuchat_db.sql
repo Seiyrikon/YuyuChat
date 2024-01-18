@@ -1,11 +1,12 @@
 DROP DATABASE IF EXISTS yuyuchat_db;
 
-CREATE DATABASE yuyuchat;
+CREATE DATABASE yuyuchat_db;
 
-USE yuyuchat;
+USE yuyuchat_db;
 
+DROP USER 'yuyuchat'@'localhost';
 CREATE USER 'yuyuchat'@'localhost' IDENTIFIED BY 'tsukiden+';
-GRANT ALL PRIVILEGES ON yuyuchat.* TO 'root'@'localhost';
+GRANT ALL PRIVILEGES ON yuyuchat_db.* TO 'yuyuchat'@'localhost';
 
 FLUSH PRIVILEGES;
 
@@ -31,3 +32,7 @@ CREATE TABLE tbl_personal_info (
     updated_at TIMESTAMP NULL DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES tbl_user(user_id)
 );
+
+-- SELECT user FROM mysql.user WHERE user = 'yuyuchat' AND host = 'localhost';
+
+

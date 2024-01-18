@@ -1,14 +1,16 @@
 @charset "ISO-8859-1";
 
-.container {
-	border: 1px solid red;
-	margin: 0;
-    padding: 20px;
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
 }
 
-h1 {
-	border: 1px solid red;
-    color: #010101;
+.content-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333; /* Darker container background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for a subtle effect */
 }

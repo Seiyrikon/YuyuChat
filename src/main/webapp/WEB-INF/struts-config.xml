@@ -4,7 +4,8 @@
     <!-- Optional elements can be added here as needed -->
 
     <form-beans>
-        <!-- Define your form beans here if needed -->
+        <form-bean name="signUpForm" type="org.yuyuchat.model.SignUpModel"/>
+        <form-bean name="loginForm" type="org.yuyuchat.model.LoginModel"/>
     </form-beans>
 
     <global-exceptions>
@@ -20,6 +21,16 @@
         <action path="/~" type="org.yuyuchat.controller.LandingPage" name="landingPage" scope="request">
             <forward name="landing-page" path="/pages/landing-page/LandingPage.jsp"/>
         </action>
+        
+        <action path="/signup" type="org.yuyuchat.controller.SignUpControllerAction" name="signUpForm" scope="request" validate="false">
+		    <forward name="success" path="index.jsp" redirect="true"/>
+		    <forward name="failure" path="/pages/signup-page/SignupFailed.jsp" redirect="true"/>
+		</action>
+		
+		<action path="/login" type="org.yuyuchat.controller.LoginControllerAction" name="loginForm" scope="request" validate="false">
+		    <forward name="success" path="index.jsp" redirect="true"/>
+		    <forward name="failure" path="/pages/login-page/LoginFailed.jsp" redirect="true"/>
+		</action>
     </action-mappings>
 
     <!-- Other optional elements can be added here as needed -->
