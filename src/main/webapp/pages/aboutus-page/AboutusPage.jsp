@@ -8,8 +8,7 @@
 <link rel="stylesheet" type="text/css" href="pages/aboutus-page/AboutusPage.css">
 </head>
 <body>
-<%@ include file="/pages/common/top-nav/TopNavigation.jsp" %>
-<div class="content-container">
+<div id="content-container" class="content-container">
 	<h1>Hello From About Us Page</h1>
 	<h3>Currently in development...</h3>
 </div>

@@ -5,8 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<meta http-equiv="refresh" content="0;url=/YuyuChat/~.do">
 </head>
 <body>
-	<h1>HELLO WORLD</h1>
+<div id="content-container"></div>
 </body>
 </html>

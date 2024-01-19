@@ -27,7 +27,7 @@ public class SignUpControllerAction extends Action {
 
         // Process signup logic
         if (signupService.signup(body)) {
-            return mapping.findForward("success");
+            return mapping.findForward("signup-success");
         } else {
             return mapping.findForward("failure");
         }

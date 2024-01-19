@@ -36,7 +36,7 @@
 
 <servlet>
     <servlet-name>LoginController</servlet-name>
-    <servlet-class>org.yuyuchat.controller.SignupControllerAction</servlet-class>
+    <servlet-class>org.yuyuchat.controller.LoginControllerAction</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>LoginController</servlet-name>

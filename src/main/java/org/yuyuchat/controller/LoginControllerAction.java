@@ -8,7 +8,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.yuyuchat.model.LoginModel;
-import org.yuyuchat.model.SignUpModel;
 
 public class LoginControllerAction extends Action{
 	

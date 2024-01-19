@@ -8,9 +8,8 @@
 <link rel="stylesheet" type="text/css" href="pages/login-page/LoginPage.css">
 </head>
 <body>
-<%@ include file="/pages/common/top-nav/TopNavigation.jsp" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-    <div class="content-container">
+    <div id="content-container" class="content-container">
         <html:form action="/login" method="post" styleId="loginForm">
             <!-- Your form fields -->
             <label for="username">Username:</label>

@@ -83,16 +83,14 @@ public class LoginModel extends ActionForm{
 			LoginModel user = new LoginModel();
 			
 			user = getUserByUsername(body.getUsername());
-			
-			if(body.getPassword() != user.getPassword())
+			if(!body.getPassword().equals(user.getPassword()))
 			{
 				return false;
 			}
-			return true;
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 }

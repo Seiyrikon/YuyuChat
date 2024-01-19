@@ -8,10 +8,8 @@
 <link rel="icon" href="resources/derpy-man.jpg" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="pages/landing-page/LandingPage.css">
 </head>
-<body>
-<%@ include file="/pages/common/top-nav/TopNavigation.jsp" %>
-
-	<div class="content-container">
+<body> 
+	<div id="content-container" class="content-container">
 		<h1>Welcome</h1>
 		<h3>Currently in development...</h3>
 	</div>

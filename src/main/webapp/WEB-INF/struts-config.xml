@@ -19,18 +19,31 @@
     <action-mappings>
         <!-- Define your action mappings here -->
         <action path="/~" type="org.yuyuchat.controller.LandingPage" name="landingPage" scope="request">
-            <forward name="landing-page" path="/pages/landing-page/LandingPage.jsp"/>
+            <forward name="landing-page" path="/index.jsp"/>
+        </action>
+        
+        <action path="/~/login" type="org.yuyuchat.controller.SignUpSuccessControllerAction" name="loginPage" scope="request">
+            <forward name="initialize-login" path="/pages/login-page/LoginPage.jsp"/>
         </action>
         
         <action path="/signup" type="org.yuyuchat.controller.SignUpControllerAction" name="signUpForm" scope="request" validate="false">
-		    <forward name="success" path="index.jsp" redirect="true"/>
+		    <forward name="signup-success" path="/pages/signup-page/SignupSuccess.jsp"/>
 		    <forward name="failure" path="/pages/signup-page/SignupFailed.jsp" redirect="true"/>
 		</action>
 		
 		<action path="/login" type="org.yuyuchat.controller.LoginControllerAction" name="loginForm" scope="request" validate="false">
-		    <forward name="success" path="index.jsp" redirect="true"/>
+		    <forward name="success" path="/pages/login-page/LoginSuccess.jsp"/>
 		    <forward name="failure" path="/pages/login-page/LoginFailed.jsp" redirect="true"/>
 		</action>
+		
+		<action path="/~/chat" type="org.yuyuchat.controller.ChatControllerAction" name="chatPage" scope="request">
+            <forward name="success" path="/pages/dashboard/Dashboard.jsp"/>
+        </action>
+        
+        <action path="/pages/dashboard/friends-page/FriendsPage" 
+        type="org.apache.struts.actions.ForwardAction" 
+        parameter="/pages/dashboard/friends-page/FriendsPage.jsp"/>
+        
     </action-mappings>
 
     <!-- Other optional elements can be added here as needed -->
