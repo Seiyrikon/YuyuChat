@@ -6,6 +6,7 @@
     <form-beans>
         <form-bean name="signUpForm" type="org.yuyuchat.model.SignUpModel"/>
         <form-bean name="loginForm" type="org.yuyuchat.model.LoginModel"/>
+        <form-bean name="users" type="org.yuyuchat.model.tbl_userModel"/>
     </form-beans>
 
     <global-exceptions>
@@ -36,8 +37,20 @@
 		    <forward name="failure" path="/pages/login-page/LoginFailed.jsp" redirect="true"/>
 		</action>
 		
-		<action path="/~/chat" type="org.yuyuchat.controller.ChatControllerAction" name="chatPage" scope="request">
+		<action path="/~/dashboard" type="org.yuyuchat.controller.ChatControllerAction" name="users" scope="request">
             <forward name="success" path="/pages/dashboard/Dashboard.jsp"/>
+        </action>
+        
+        <action path="/~/chats" type="org.yuyuchat.controller.ChatControllerAction" name="users" scope="request">
+            <forward name="success" path="/pages/dashboard/chat-page/ChatPage.jsp"/>
+        </action>
+        
+        <action path="/chat" type="org.yuyuchat.controller.ChatSessionControllerAction" name="users" scope="request">
+            <forward name="success" path="/pages/dashboard/chat-session/ChatSessionSuccess.jsp"/>
+        </action>
+        
+        <action path="/~/chatty" type="org.yuyuchat.controller.ChatSessionControllerAction" name="users" scope="request">
+            <forward name="success" path="/pages/dashboard/chat-session/ChatSessionPage.jsp"/>
         </action>
         
         <action path="/pages/dashboard/friends-page/FriendsPage" 

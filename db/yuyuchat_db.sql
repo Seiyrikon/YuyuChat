@@ -69,6 +69,19 @@ CREATE TABLE tbl_friends(
     FOREIGN KEY (friend_id) REFERENCES tbl_user(user_id)
 );
 
+DROP TABLE IF EXISTS tbl_chats;
+CREATE TABLE tbl_chats(
+	c_id INT(9) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_id INT(9) UNSIGNED NOT NULL,
+    friend_id INT(9) UNSIGNED NOT NULL,
+    message TEXT NOT NULL,
+    del_flag INT(1) NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT NULL,
+    FOREIGN KEY (user_id) REFERENCES tbl_user(user_id),
+    FOREIGN KEY (friend_id) REFERENCES tbl_user(user_id)
+);
+
 -- SELECT user FROM mysql.user WHERE user = 'yuyuchat' AND host = 'localhost';
 
 

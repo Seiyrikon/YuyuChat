@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta http-equiv="refresh" content="0;url=/YuyuChat/~.do">
 <title>Insert title here</title>
-<meta http-equiv="refresh" content="0;url=/YuyuChat/~/dashboard.do">
 </head>
 <body>
-
 </body>
 </html>

@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.struts.action.ActionForm;
 import org.yuyuchat.config.DatabaseConfig;
 
@@ -46,51 +49,43 @@ public class LoginModel extends ActionForm{
 	}
 	
 	public LoginModel getUserByUsername(String username) {
-		LoginModel user = null;
+		LoginModel user = new LoginModel();
 
 	    try (Connection connection = DatabaseConfig.getConnection()) {
-	        // SQL statement for retrieving user data by username
 	        String getUserByUsername = "SELECT * FROM tbl_user WHERE username = ?";
 
-	        // Create a PreparedStatement
 	        try (PreparedStatement statement = connection.prepareStatement(getUserByUsername)) {
-	            // Set the username parameter
+
 	            statement.setString(1, username);
 
-	            // Execute the SELECT statement
 	            try (ResultSet resultSet = statement.executeQuery()) {
-	                // Check if the user with the given username exists
 	                if (resultSet.next()) {
-	                    // Map the result set to SignUpModel fields
-	                    user = new LoginModel();
 	                    user.setUserId(resultSet.getLong("user_id"));
 	                    user.setUsername(resultSet.getString("username"));
 	                    user.setPassword(resultSet.getString("password"));
-	                    // Set other fields accordingly
 	                }
 	            }
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        // Handle the exception, log it, or rethrow it as needed
 	    }
 
 	    return user;
 	}
 	
-	public boolean login(LoginModel body) {
+	public boolean login(LoginModel body, HttpServletRequest request) {
 		try {
-			LoginModel user = new LoginModel();
-			
-			user = getUserByUsername(body.getUsername());
-			if(!body.getPassword().equals(user.getPassword()))
-			{
-				return false;
-			}
+			LoginModel user = getUserByUsername(body.getUsername());
+			if (user != null && body.getPassword().equals(user.getPassword())) {
+                // Set userId in session upon successful login
+                HttpSession session = request.getSession();
+                session.setAttribute("userId", user.getUserId());
+                return true;
+            }
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		return true;
+		return false;
 	}
 }

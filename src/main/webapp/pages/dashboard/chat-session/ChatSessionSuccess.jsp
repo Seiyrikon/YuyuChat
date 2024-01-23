@@ -5,9 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<meta http-equiv="refresh" content="0;url=/YuyuChat/~/dashboard.do">
+<meta http-equiv="refresh" content="0;url=/YuyuChat/~/chatty.do">
 </head>
 <body>
-
 </body>
 </html>

@@ -97,7 +97,7 @@
         .card-title {
             margin: 0;
         }
-       
+
         .btn-chat {
             background-color: #333;
             color: #fff;
@@ -155,39 +155,12 @@
                 // Display the userId
                 Long principal_id = Long.parseLong(currentSession.getAttribute("userId").toString());
                 userModel = userDao.getUserModelByUserId(principal_id);
-                out.println("<h3>" + "<strong>" + userModel.getFirst_name() + "</strong>" + "</h3>");
+                out.println("<h1>Welcome " + "<strong>" + userModel.getFirst_name() + "</strong>" + "</h1>");
             } else {
                 // Display a message if the userId is not in the session
                 out.println("<p>User ID not found in the session</p>");
             }
         %>
-        
-        
-        <c:if test="${not empty users}">
-        <c:forEach var="user" items="${users}">
-	        <div class="card-container">
-		        <div class="chat p-4">
-		        	<div class="info-container">
-		        		<div class="username">
-			            	<h3 class="card-title">${user.username}</h3>
-			            </div>
-			            <div class="name">
-				            <p>${user.first_name}</p> 
-				            <p>${user.middle_name}</p> 
-				            <p>${user.last_name}</p>
-			            </div>
-		            </div>
-		            <div class="button-container">
-		            	<html:link action="/chat" styleClass="btn btn-chat">
-					      <param name="userId" value="${user.user_id}" />
-					      Chat
-					    </html:link>
-		            </div>
-		        </div>
-		    </div>
-        </c:forEach>
-</c:if>
-
 
     </div>
   </div>
@@ -235,10 +208,6 @@
 	
 	function onLogout() {
 		loadContent("/YuyuChat/pages/dashboard/LogoutHandler.jsp");
-	}
-	
-	function onChat(userId) {
-		console.log(userId);
 	}
 
   </script>
